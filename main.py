@@ -9,14 +9,11 @@ while True:
             file = open('todos.txt', 'r')
             todos = file.readlines()
             file.close()
-            print('file is closed')
 
             todos.append(todo)
-            print('file is appended')
 
             file = open('todos.txt', 'w')
             file.writelines(todos)
-            print('line is written')
             file.close()
 
         case 'show' | 'display':
