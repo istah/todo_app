@@ -1,6 +1,6 @@
-def get_todos():
-    with open('todos.txt', 'r') as file:
-            todos_local = file.readlines()
+def get_todos(filepath):
+    with open(filepath, 'r') as file_local:
+            todos_local = file_local.readlines()
     return todos_local
 
 
@@ -10,7 +10,7 @@ while True:
     if user_action.startswith("add"):
         todo = user_action[4:] + '\n'
 
-        todos = get_todos()
+        todos = get_todos('todos.txt')
 
         todos.append(todo)
 
@@ -32,7 +32,7 @@ while True:
             number = int(user_action[5:])
             number = number - 1
 
-            todos = get_todos()
+            todos = get_todos('todos.txt')
 
             print('Here is todos existig: ', todos)
 
@@ -49,7 +49,7 @@ while True:
         try:
             number = int(user_action[9:])
 
-            todos = get_todos()
+            todos = get_todos('todos.txt')
 
             index = number - 1
             todo_to_remove = todos[index].strip('\n')
