@@ -1,7 +1,6 @@
 inputs = []
 while True:
     prompt = input("Throw the coin and enter head or tail here: ")
-    print(prompt)
     inputs.append(prompt)
     n_heads = inputs.count("head")
     n_tail = inputs.count("tail")
